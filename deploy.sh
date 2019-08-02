@@ -29,9 +29,10 @@ echo "Building image..."
 docker build . -t $image
 
 echo "Tagging image..."
+branch=$(echo "$GITHUB_REF" | awk -F '/' '{print $NF}')
 docker tag $image $registry/$image:latest
 docker tag $image $registry/$image:$GITHUB_SHA
-docker tag $image $registry/$image:$GITHUB_REF
+docker tag $image $registry/$image:$branch
 docker tag $image $registry/$image:${GITHUB_SHA:0:7}
 
 echo "Pushing image..."
