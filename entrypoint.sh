@@ -48,10 +48,9 @@ EOF
 trap fail EXIT
 
 # Ensure that the GitHub GPG key is present
-if [ ! "$RAPTOR_GPG" ]; then
-    printf "You must provide a GPG configuration in order to access your "
+if [ ! "$RAPTOR_KEY" ]; then
+    printf "You must provide a GPG private key in order to access your "
     printf "black box encrypted secrets!\n\n"
-    printf "This should be gziped tar file \n"
     exit 1
 fi
 
