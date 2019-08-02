@@ -5,7 +5,7 @@
 #
 # Usage ./deploy.sh
 
-image=${RAPTOR_NAME:-$GITHUB_REPOSITORY}
+image=${RAPTOR_IMAGE:-$GITHUB_REPOSITORY}
 registry="$RAPTOR_REGISTRY"
 
 echo "Building image $image and pushing it to $registry..."
