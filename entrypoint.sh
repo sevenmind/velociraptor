@@ -45,6 +45,7 @@ snd|  ,     |  /\\ \\ \\__    |       \\_
                                              (o)====(o)
 EOF
 }
+trap fail EXIT
 
 # Ensure that the GitHub GPG key is present
 if [ ! "$RAPTOR_KEY" ]; then
