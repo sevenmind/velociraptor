@@ -31,7 +31,7 @@ workflow "Dinosaur" {
 
 action "Raptor" {
   secrets = ["RAPTOR_KEY"]
-  env {
+  env = {
     RAPTOR_REGISTRY = "docker.io/username"
     RAPTOR_IMAGE = "image-name"
   }
