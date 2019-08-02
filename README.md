@@ -10,14 +10,15 @@ functionality of building an image and pushgin to google cloud. It does this in
 the following stages:
 
 1. Looks for an encrypted JSON service account in the `.github/` folder, and
-   decrypts it. (currently it looks for any `.json` file therin).
-2. Builds your image
-3. Tags your image with the following default tags.
+   decrypts it. (currently it looks for any `.json` file therein).
+2. Adds the decrypted `.github` folder to your `.gitignore`
+3. Builds your image
+4. Tags your image with the following default tags.
 - latest
 - the git branch it was pushed on
 - the first 7 characters of the commit sha
 - the full commit sha
-4. Pushes to the provided repository.
+5. Pushes to the provided repository.
 
 
 A simple workflow looks something like the following.
