@@ -63,7 +63,7 @@ export GNUPGHOME=/tmp/.gnupg
 
 # Extract the provided gpg information in order to allow decryption...
 
-echo $RAPTOR_KEY | gpg -v --import
+printf "$RAPTOR_KEY" | gpg -v --import
 
 # Unlock the repo
 echo "Unlocking repo..."
