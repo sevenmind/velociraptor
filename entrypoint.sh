@@ -62,7 +62,8 @@ mkdir -m 0700 -p /tmp/.gnupg
 export GNUPGHOME=/tmp/.gnupg
 
 # Extract the provided gpg information in order to allow decryption...
-gpg -v --import <(echo "$RAPTOR_KEY")
+
+echo $RAPTOR_KEY | gpg -v --import
 
 # Unlock the repo
 echo "Unlocking repo..."
