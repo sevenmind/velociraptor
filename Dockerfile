@@ -1,5 +1,14 @@
 FROM docker:stable
 
+LABEL "com.github.actions.name"="Velociraptor"
+LABEL "com.github.actions.description"="Builds and pushes images to Google Cloud"
+LABEL "com.github.actions.icon"="mic"
+LABEL "com.github.actions.color"="purple"
+
+LABEL "repository"="http://github.com/sevenmind/velociraptor"
+LABEL "homepage"="http://github.com/sevenmind/velociraptor"
+LABEL "maintainer"="Sequoia Snow <the1codemaster@gmail.com>"
+
 # A nice space to do some work
 WORKDIR /velociraptor
 
