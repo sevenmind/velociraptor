@@ -12,8 +12,8 @@ workflow "Dinosaur" {
 }
 
 action "Raptor" {
-  secrets = ["RAPTOR_GPG"]
-  uses = "sevenmind/velociraptor"
+  secrets = ["RAPTOR_KEY"]
+  uses = "sevenmind/velociraptor@master"
 }
 ```
 
@@ -26,6 +26,15 @@ The following configuration options exist
 
 | Name            | Description                             | Default             |
 |:----------------|:----------------------------------------|:--------------------|
-| RAPTOR_GPG      | A base64 encoded tar archive of gpg data| `-`                 |
+| RAPTOR_KEY      | A key authorized to decrypt secrets     | `-`                 |
 | RAPTOR_IMAGE    | The name the built image should be taged| Repository Name     |
 | RAPTOR_REGISTRY | The registry to push the image to       | eu.gcr.io/***REMOVED***|
+
+---
+
+By default your image will have the following tags
+
+- latest
+- the git branch it was pushed on
+- the first 7 characters of the commit sha
+- the full commit sha

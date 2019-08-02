@@ -64,21 +64,7 @@ mkdir -m 0700 -p /tmp/.gnupg
 export GNUPGHOME=/tmp/.gnupg
 
 # Extract the provided gpg information in order to allow decryption...
-echo $RAPTOR_GPG | base64 -d | tar -C /tmp/.gnupg -xvpf -
-
-# Import key ring
-#if [ -f ./keyrings/live/pubring.kbx ]; then
-#    gpg --import ./keyrings/live/pubring.kbx
-#elif [ -f ./keyrings/live/pubring.gpg ]; then
-#    gpg --import ./keyrings/live/pubring.gpg
-#elif [ -f ./.blackbox/pubring.kbx ]; then
-#    gpg --import ./.blackbox/pubring.kbx
-#elif [ -f ./.blackbox/pubring.gpg ]; then
-#    gpg --import ./.blackbox/pubring.gpg
-#else
-#    echo "Looks like you don't have any black box keys present!"
-#    exit 1
-#fi
+gpg -v --import <(echo "$RAPTOR_KEY")
 
 # Unlock the repo
 echo "Unlocking repo..."
