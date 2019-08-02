@@ -6,7 +6,7 @@
 # Usage ./deploy.sh
 
 image=${RAPTOR_IMAGE_NAME:-$GITHUB_REPOSITORY}
-registry=${RAPTOR_IMAGE_REGISTRY:-eu.gcr.io/***REMOVED***}
+registry="$RAPTOR_IMAGE_REGISTRY"
 
 echo "Building image $image and pushing it to $registry..."
 

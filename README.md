@@ -24,11 +24,11 @@ cloud and exit.
 
 The following configuration options exist
 
-| Name            | Description                             | Default             |
-|:----------------|:----------------------------------------|:--------------------|
-| RAPTOR_KEY      | A key authorized to decrypt secrets     | `-`                 |
-| RAPTOR_IMAGE    | The name the built image should be taged| Repository Name     |
-| RAPTOR_REGISTRY | The registry to push the image to       | eu.gcr.io/***REMOVED***|
+| Name            | Description                             | Default         |
+|:----------------|:----------------------------------------|:----------------|
+| RAPTOR_KEY      | A key authorized to decrypt secrets     | `-`             |
+| RAPTOR_IMAGE    | The name the built image should be taged| Repository Name |
+| RAPTOR_REGISTRY | The registry to push the image to       | `-`             |
 
 ---
 
