@@ -11,7 +11,7 @@ the following stages:
 
 1. Looks for an encrypted JSON service account in the `.github/` folder, and
    decrypts it. (currently it looks for any `.json` file therein).
-2. Adds the decrypted `.github` folder to your `.gitignore`
+2. Adds the decrypted `.github` folder to your `.dockerignore`
 3. Builds your image
 4. Tags your image with the following default tags.
 - latest
