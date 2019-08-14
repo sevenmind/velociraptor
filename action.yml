@@ -5,16 +5,16 @@ description: |
   google.
 author: Sevenmind
 inputs:
-  raptor-key:
+  key:
     description: >
       The GPG key to use in order to decrypt blackbox data
     required: true
-  raptor-image:
+  image:
     description: >
       The image name you wish for the built image provided.
     required: false
     default:
-  raptor-registry:
+  registry:
     description: >
       The docker registry you wish to push your image to. Note that currently
       raptor only support google cloud registry for automatic authorization.
