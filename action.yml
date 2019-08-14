@@ -1,0 +1,28 @@
+name: Velociraptor
+description: |
+  Decrypts blackbox data for a given repository using a passless GPG key
+  provided, and optionally tags and pushes an image to a docker repository on
+  google.
+author: Sevenmind
+inputs:
+  raptor-key:
+    description: >
+      The GPG key to use in order to decrypt blackbox data
+    required: true
+  raptor-image:
+    description: >
+      The image name you wish for the built image provided.
+    required: false
+    default:
+  raptor-registry:
+    description: >
+      The docker registry you wish to push your image to. Note that currently
+      raptor only support google cloud registry for automatic authorization.
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  main: entrypoint.sh
+branding:
+  icon: 'globe'
+  color: 'orange'

@@ -23,20 +23,28 @@ the following stages:
 
 A simple workflow looks something like the following.
 
-```hcl
-workflow "Dinosaur" {
-  on = "Push"
-  resolves = "Raptor"
-}
+```yaml
+name: Demonstrate Velociraptor
 
-action "Raptor" {
-  secrets = ["RAPTOR_KEY"]
-  env = {
-    RAPTOR_REGISTRY = "docker.io/username"
-    RAPTOR_IMAGE = "image-name"
-  }
-  uses = "sevenmind/velociraptor@master"
-}
+# The event you wish to trigger your build on. This is almost allways push for
+more CI integrations, but you can also restrict Velociraptor to merge if you wish.
+on: push
+
+
+jobs:
+  deploy:
+    # First we will download your code...
+    name: Deploy With Raptor
+    steps:
+    # Get your code
+    - uses: actions/checkout@master
+
+    # Build and deploy
+    - uses: sevenmind/velociraptor@master
+      with:
+        raptor-registry: "docker.io/username"
+        raptor-image: "image-name"
+        raptor-key: ${{ secrets.RAPTOR_KEY }}
 ```
 
 That's it! The velociraptor action will build your image, push it to google
@@ -57,3 +65,17 @@ The following configuration options exist
 If you want to do more, you can also pass the path to a script as an argument.
 It will then be run with access to a docker executable and ALL decrypted
 secrets.
+
+
+## Recent Changes
+
+Recently GitHub upgraded the capabilities of GitHub actions to support expanded
+capabilities. This has dramatically increased the capabilities of github
+Deployments, so of course Velociraptor has been updated to take advantage of
+these features. However, if you are using a legacy version, you may notice some
+breaking changes for older workflows. In that case please use a legacy copy of
+velociraptor by specifying
+
+```hcl
+uses = "sevenmind/velociraptor@3414e2fb1a3f55280eac2d1de3576a6885c2017e"
+```
