@@ -48,7 +48,7 @@ EOF
 trap fail EXIT
 
 # Ensure that the GitHub GPG key is present
-if [ ! "$RAPTOR_KEY" ]; then
+if [ ! "$INPUT_KEY" ]; then
     printf "You must provide a GPG private key in order to access your "
     printf "black box encrypted secrets!\n\n"
     exit 1
@@ -64,7 +64,7 @@ export GNUPGHOME=/tmp/.gnupg
 
 # Extract the provided gpg information in order to allow decryption...
 
-printf "$RAPTOR_KEY" | gpg -v --import
+printf "$INPUT_KEY" | gpg -v --import
 
 # Unlock the repo
 echo "Unlocking repo..."

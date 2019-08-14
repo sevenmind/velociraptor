@@ -5,14 +5,14 @@
 #
 # Usage ./deploy.sh
 
-image="$RAPTOR_IMAGE"
+image="$INPUT_IMAGE"
 if [ ! "$image" ]; then
     # The name of the image is the repo name, we extract this as the last part
     # of the owner/repo-name object passed using awk.
     image=$(echo "$GITHUB_REPOSITORY" | awk -F '/' '{print $NF}')
 fi
 
-registry="$RAPTOR_REGISTRY"
+registry="$INPUT_REGISTRY"
 
 echo "Building image $image and pushing it to $registry..."
 
