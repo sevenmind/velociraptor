@@ -42,13 +42,18 @@ jobs:
     # Build and deploy
     - uses: sevenmind/velociraptor@master
       with:
-        raptor-registry: "docker.io/username"
-        raptor-image: "image-name"
-        raptor-key: ${{ secrets.RAPTOR_KEY }}
+        registry: "docker.io/username"
+        image: "image-name"
+        key: ${{ secrets.RAPTOR_KEY }}
 ```
 
 That's it! The velociraptor action will build your image, push it to google
 cloud and exit.
+
+
+> Note in previous version of Velociraptor we used a prefix of `RAPTOR_` for our
+> arguments. This is no longer necessary as GitHub naively prefixes them. Be
+> sure to change your configuration accordingly when upgrading!
 
 ---
 
