@@ -71,8 +71,9 @@ echo "Unlocking repo..."
 blackbox_postdeploy
 
 # Run the provided script to deploy...
-cmd="$1"
-sh ${cmd:-/deploy.sh}
+if [ ! "$INPUT_DECRPYT_ONLY" ]; then
+    sh /deploy.sh
+fi
 
 
 cat <<EOF

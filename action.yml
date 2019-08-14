@@ -18,7 +18,13 @@ inputs:
     description: >
       The docker registry you wish to push your image to. Note that currently
       raptor only support google cloud registry for automatic authorization.
-    required: true
+    required: false
+  decrypt_only:
+    description: >
+      Sometimes it can be beneficial to decrypt only, and not push our image. In
+      such cases pass true to decrypt_only and velociraptor will simply decrypt
+      your files for future actions to use.
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'

@@ -55,15 +55,22 @@ cloud and exit.
 > arguments. This is no longer necessary as GitHub naively prefixes them. Be
 > sure to change your configuration accordingly when upgrading!
 
+## Decrypt Only
+
+Sometimes you don't want to push to Google Cloud Registry, but do want to access
+your secrets. To do this simply run velociraptor with `DECRYPT_ONLY: true` and
+it will exit after executing a successful blackbox post deploy.
+
 ---
 
 The following configuration options exist
 
-| Name            | Description                             | Default         |
-|:----------------|:----------------------------------------|:----------------|
-| RAPTOR_KEY      | A key authorized to decrypt secrets     | `-`             |
-| RAPTOR_IMAGE    | The name the built image should be taged| Repository Name |
-| RAPTOR_REGISTRY | The registry to push the image to       | `-`             |
+| Name           | Description                             | Default         |
+|:---------------|:----------------------------------------|:----------------|
+| `KEY`          | A key authorized to decrypt secrets     | `-`             |
+| `IMAGE`        | The name the built image should be taged| Repository Name |
+| `REGISTRY`     | The registry to push the image to       | `-`             |
+| `DECRYPT_ONLY` | Only decrypt, don't push the image      | `false`         |
 
 ---
 
