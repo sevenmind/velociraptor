@@ -75,6 +75,8 @@ echo "Done With decryption!"
 if [ ! "$INPUT_DECRPYT_ONLY" ]; then
     echo "Building image..."
     sh /deploy.sh
+else
+    echo "Since you set decrypt_only to '$INPUT_DECRYPT_ONLY' that's it :)'
 fi
 
 cat <<EOF
