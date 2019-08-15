@@ -69,12 +69,13 @@ printf "$INPUT_KEY" | gpg -v --import
 # Unlock the repo
 echo "Unlocking repo..."
 blackbox_postdeploy
+echo "Done With decryption!"
 
 # Run the provided script to deploy...
 if [ ! "$INPUT_DECRPYT_ONLY" ]; then
+    echo "Building image..."
     sh /deploy.sh
 fi
-
 
 cat <<EOF
                                                      ___._
