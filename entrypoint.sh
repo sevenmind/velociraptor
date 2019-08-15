@@ -72,7 +72,7 @@ blackbox_postdeploy
 echo "Done With decryption!"
 
 # Run the provided script to deploy...
-if [ ! "$INPUT_DECRPYT_ONLY" ]; then
+if [ ! "$INPUT_DECRYPT_ONLY" ]; then
     echo "Building image..."
     sh /deploy.sh
 else
