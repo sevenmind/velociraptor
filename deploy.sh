@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 # A standard deployment program. It will look for a key file in .github, which
 # has at this point been decrypted, and push the same to docker.
 #
