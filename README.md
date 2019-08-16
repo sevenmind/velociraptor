@@ -35,6 +35,7 @@ jobs:
   deploy:
     # First we will download your code...
     name: Deploy With Raptor
+    uses: ubuntu-latest
     steps:
     # Get your code
     - uses: actions/checkout@master
