@@ -33,8 +33,14 @@ echo ".github" >> .dockerignore
 echo "Authenticating with google..."
 docker login -u _json_key --password-stdin https://eu.gcr.io < $key
 
-echo "Building image..."
-docker build . -t $image
+# Run the provided script to deploy...
+if [ ! "$INPUT_PUSH_ONLY" ]; then
+    echo "using existing image of $image"
+    docker images
+else
+    echo "Building image..."
+    docker build . -t $image
+fi
 
 echo "Tagging image..."
 branch=$(echo "$GITHUB_REF" | awk -F '/' '{print $NF}')
