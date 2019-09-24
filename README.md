@@ -6,7 +6,7 @@ uses a provided gpg key in order to decrypt blackbox data which is than
 available for any script passed as an argument.
 
 If you do not pass any arguments to Velociraptor it follows its default
-functionality of building an image and pushgin to google cloud. It does this in
+functionality of building an image and pushing to google cloud. It does this in
 the following stages:
 
 1. Looks for an encrypted JSON service account in the `.github/` folder, and
