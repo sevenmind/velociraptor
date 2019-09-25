@@ -66,12 +66,13 @@ it will exit after executing a successful blackbox post deploy.
 
 The following configuration options exist
 
-| Name           | Description                             | Default         |
-|:---------------|:----------------------------------------|:----------------|
-| `KEY`          | A key authorized to decrypt secrets     | `-`             |
-| `IMAGE`        | The name the built image should be taged| Repository Name |
-| `REGISTRY`     | The registry to push the image to       | `-`             |
-| `DECRYPT_ONLY` | Only decrypt, don't push the image      | `false`         |
+| Name           | Description                                             | Default         |
+| :------------- | :------------------------------------------------------ | :-------------- |
+| `KEY`          | A key authorized to decrypt secrets                     | `-`             |
+| `IMAGE`        | The name the built image should be taged                | Repository Name |
+| `REGISTRY`     | The registry to push the image to                       | `-`             |
+| `DECRYPT_ONLY` | Only decrypt, don't push the image                      | `false`         |
+| `PUSH_ONLY`    | Push an existing image, don't build within Velociraptor | `false`         |
 
 ---
 

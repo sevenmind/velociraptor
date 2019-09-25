@@ -25,6 +25,11 @@ inputs:
       such cases pass true to decrypt_only and velociraptor will simply decrypt
       your files for future actions to use.
     required: false
+  push_only:
+    description: >
+      Skip running `docker build` within velociraptor. Your image must be built 
+      within Velociraptor
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
